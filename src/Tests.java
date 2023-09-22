@@ -12,30 +12,48 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * A classe Tests especifica um conjunto de testes implementado recorrendo à ferramenta 
- * JUnit. Estes testes usam como input os ficheiros de teste do Mooshak, gerando, como
+ * A classe Tests especifica um conjunto de testes implementado recorrendo à
+ * ferramenta
+ * JUnit. Estes testes usam como input os ficheiros de teste do Mooshak,
+ * gerando, como
  * output, o resultado esperado na execução desses testes.
- * A classe está implementada para os testes do problema do contactBook.ContactBook, a usar na primeira
- * aula prática de POO. No entanto, a sua adaptação para os restantes problemas a realizar 
+ * A classe está implementada para os testes do problema do
+ * contactBook.ContactBook, a usar na primeira
+ * aula prática de POO. No entanto, a sua adaptação para os restantes problemas
+ * a realizar
  * ao longo do semestre é trivial.
- * Para poder usar esta classe tem de incluir no seu ambiente de execução a biblioteca JUnit 4.
+ * Para poder usar esta classe tem de incluir no seu ambiente de execução a
+ * biblioteca JUnit 4.
  * Veja como o pode fazer na primeira aula prática do semestre!
  */
 public class Tests {
     /**
      * Use as linhas que se seguem para especificar os testes que vai realizar.
-     * Neste ficheiro de exemplo, criado para o projecto contactBook.ContactBook, apenas temos
+     * Neste ficheiro de exemplo, criado para o projecto contactBook.ContactBook,
+     * apenas temos
      * 3 testes para realizar. Para cada ficheiro de input, existe um ficheiro de
      * output correspondente. Por exemplo, o resultado esperado para o teste
-     * 1_in_base.txt é 1_out_base.txt . Não tem de fazer mais nada no resto da classe.
+     * 1_in_base.txt é 1_out_base.txt . Não tem de fazer mais nada no resto da
+     * classe.
      * Basta configurar esta sequência de testes!
      */
-    @Test public void test1() { test("1_in_base.txt","1_out_base.txt"); }
-    @Test public void test2() { test("2_in_base_GN.txt","2_out_base_GN.txt"); }
-    @Test public void test3() { test("3_in_base_EP.txt","3_out_base_EP.txt"); }
+    @Test
+    public void test1() {
+        test("1_in_base.txt", "1_out_base.txt");
+    }
 
+    @Test
+    public void test2() {
+        test("2_in_base_GN.txt", "2_out_base_GN.txt");
+    }
 
-    private static final File BASE = new File("tests");
+    @Test
+    public void test3() {
+        test("3_in_base_EP.txt", "3_out_base_EP.txt");
+    }
+
+    private static final File BASE = new File(
+            "/home/dan/LEI/Ano 3/Semestre 1/ES/Práticas/lab2/git/ContactBookGit/tests");
 
     private PrintStream consoleStream;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -64,7 +82,7 @@ public class Tests {
             consoleStream.println("OUTPUT ESPERADO =============");
             consoleStream.println(new String(fullOutput));
             consoleStream.println("OUTPUT =============");
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             fail("Erro a ler o ficheiro");
         }
